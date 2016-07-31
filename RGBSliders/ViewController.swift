@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        redSlider.value=255
+        greenSlider.value=0
+        blueSlider.value=0
         sliderChanged()
     }
 
@@ -29,7 +32,10 @@ class ViewController: UIViewController {
         let red = CGFloat(redSlider.value)
         let blue = CGFloat(blueSlider.value)
         let green = CGFloat(greenSlider.value)
-        view.backgroundColor = UIColor(red: red, green: green,blue:blue,alpha:1)
+        //view.backgroundColor = UIColor(red: red, green: green,blue:blue,alpha:1)
+        view.backgroundColor=UIColor(red: red, green: green, blue: blue, alpha: 0.5)
+        let str = "\(red) \(green) \(blue)"
+        print(str)
         //view.backgroundColor(UIColor(CGColor: <#T##CGColor#>)
     }
 }
