@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
+    @IBOutlet weak var rectangle: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +21,9 @@ class ViewController: UIViewController {
         greenSlider.value=0
         blueSlider.value=0
         sliderChanged()
+        
+        rectangle.layer.borderColor = UIColor.blackColor().CGColor
+        rectangle.layer.borderWidth = 5
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +37,8 @@ class ViewController: UIViewController {
         let blue = CGFloat(blueSlider.value)
         let green = CGFloat(greenSlider.value)
         //view.backgroundColor = UIColor(red: red, green: green,blue:blue,alpha:1)
-        view.backgroundColor=UIColor(red: red, green: green, blue: blue, alpha: 0.5)
+        //view.backgroundColor=UIColor(red: red, green: green, blue: blue, alpha: 0.5)
+        rectangle.backgroundColor=UIColor(red: red, green: green, blue: blue, alpha: 1)
         let str = "\(red) \(green) \(blue)"
         print(str)
         //view.backgroundColor(UIColor(CGColor: <#T##CGColor#>)
