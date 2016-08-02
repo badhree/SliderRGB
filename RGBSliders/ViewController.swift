@@ -43,5 +43,14 @@ class ViewController: UIViewController {
         print(str)
         //view.backgroundColor(UIColor(CGColor: <#T##CGColor#>)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        
+        if(segue.identifier=="openColor"){
+            let newView = segue.destinationViewController
+            newView.view.backgroundColor=rectangle.backgroundColor
+        }
+    }
 }
 

@@ -70,7 +70,7 @@
                                 <rect key="frame" x="141" y="74" width="46" height="30"/>
                                 <state key="normal" title="Open"/>
                                 <connections>
-                                    <segue destination="l1N-zk-AJb" kind="show" id="JUK-pw-qVJ"/>
+                                    <segue destination="l1N-zk-AJb" kind="show" identifier="openColor" id="JUK-pw-qVJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -87,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="318"/>
+            <point key="canvasLocation" x="1533" y="434"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2zX-lV-RKp">
