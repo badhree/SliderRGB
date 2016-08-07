@@ -20,6 +20,13 @@ class ViewController: UIViewController {
         redSlider.value=255
         greenSlider.value=0
         blueSlider.value=0
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        redSlider.value = defaults.floatForKey("red")
+        greenSlider.value = defaults.floatForKey("green")
+        blueSlider.value = defaults.floatForKey("blue")
+        
+        
         sliderChanged()
         
         rectangle.layer.borderColor = UIColor.blackColor().CGColor
@@ -33,7 +40,7 @@ class ViewController: UIViewController {
 //Testing Source Control
 
     @IBAction func sliderChanged() {
-        let red = CGFloat(redSlider.value)
+        /*let red = CGFloat(redSlider.value)
         let blue = CGFloat(blueSlider.value)
         let green = CGFloat(greenSlider.value)
         //view.backgroundColor = UIColor(red: red, green: green,blue:blue,alpha:1)
@@ -41,7 +48,20 @@ class ViewController: UIViewController {
         rectangle.backgroundColor=UIColor(red: red, green: green, blue: blue, alpha: 1)
         let str = "\(red) \(green) \(blue)"
         print(str)
-        //view.backgroundColor(UIColor(CGColor: <#T##CGColor#>)
+        //view.backgroundColor(UIColor(CGColor: <#T##CGColor#>)*/
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setFloat(redSlider.value, forKey: "red")
+        defaults.setFloat(blueSlider.value, forKey: "blue")
+        defaults.setFloat(greenSlider.value, forKey: "green")
+        defaults.synchronize()
+        
+        let red = defaults.floatForKey("red")
+        let green = defaults.floatForKey("green")
+        let blue = defaults.floatForKey("blue")
+        rectangle.backgroundColor=UIColor(red: CGFloat(red), green: CGFloat(green)
+            , blue: CGFloat(blue), alpha: 1.0)
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
